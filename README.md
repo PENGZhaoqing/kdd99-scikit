@@ -31,14 +31,16 @@ Performance report:
 
 
 Besides, you can visualize the trained tree in `CART/output/tree-vis.pdf`
-And the trained model is persisted in `CART/output/CART.pkl`
 
 
+And the trained model is persisted in `CART/output/CART.pkl`, you can perform off-line perdiction 
 
 ### For MLP
 
+```
 cd MLP
 python MLP_Runner.py
+```
 
 Output:
 
@@ -64,5 +66,47 @@ Performance report:
 avg / total       0.97      0.97      0.96     50000
 ```
 
+And the trained model is persisted in `MLP/output/MLP.pkl`, you can perform off-line perdiction 
 
+## structure
 
+```
+.
+├── CART
+│   ├── CART_Predictor.py
+│   ├── CART_Predictor.pyc
+│   ├── CART_Runner.py
+│   ├── CART_Trainer.py
+│   ├── CART_Trainer.pyc
+│   ├── __init__.py
+│   └── output
+│       ├── CART.pkl
+│       └── tree-vis.pdf
+├── MLP
+│   ├── MLP_Predictor.py
+│   ├── MLP_Predictor.pyc
+│   ├── MLP_Runner.py
+│   ├── MLP_Trainer.py
+│   ├── MLP_Trainer.pyc
+│   ├── __init__.py
+│   └── output
+│       ├── MLP.pkl
+│       └── decision-tree.pkl
+├── Mongo_Con.py
+├── Mongo_Con.pyc
+├── Preprocessing.py
+├── Preprocessing.pyc
+├── Variable.py
+├── Variable.pyc
+├── __init__.py
+├── __init__.pyc
+├── data
+│   ├── corrected.txt
+│   └── kddcup.data_10_percent.txt
+└── raw
+    ├── corrected.txt
+    ├── kddcup.data_10_percent.txt
+    ├── testdata_unlabeled_50000.txt
+    └── training_attack_types.txt
+    
+```
