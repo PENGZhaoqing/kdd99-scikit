@@ -69,11 +69,11 @@ python CART_Runner.py
    avg / total       0.96      0.97      0.96     50000
    ```
 
-训练完成的决策树导出到`CART/output/tree-vis.pdf`供可视化，如图：
+* 训练完成的决策树导出到`CART/output/tree-vis.pdf`供可视化，如图：
 
 <img src="/Snip20161130_3.png">  
 
-决策树模型被持久化在 `CART/output/CART.pkl`文件下，方便以后做离线预测
+* 决策树模型被持久化在 `CART/output/CART.pkl`文件下，方便以后做离线预测
 
 ### For MLP
 
@@ -106,7 +106,7 @@ python MLP_Runner.py
    avg / total       0.97      0.97      0.96     50000
    ```
 
-MLP模型被持久化在 `MLP/output/MLP.pkl`文件下，方便以后做离线预测
+* MLP模型被持久化在 `MLP/output/MLP.pkl`文件下，方便以后做离线预测
 
 ## Structure
 
