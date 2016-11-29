@@ -43,31 +43,31 @@ cd CART
 python CART_Runner.py
 ```
 
-Output:
+**Output**:
 
-Confusion matrix:
+1. Confusion matrix:
 
-```
-[[ 6335     7    24     0     2]
- [  184   606    19     0     0]
- [  233     1 41486     0     0]
- [    3     0     0     0     0]
- [ 1098     0     1     0     1]]
-```
+   ```
+    [ 6361     6     1     0     0]
+    [   28   751    30     0     0]
+    [   96    19 41605     0     0]
+    [    3     0     0     0     0]
+    [ 1097     2     1     0     0]]
+   ```
 
-Performance report:
+2. Performance report:
 
-```
-             precision    recall  f1-score   support
+   ```
+                precision    recall  f1-score   support
 
-          0       0.81      0.99      0.89      6368
-          1       0.99      0.75      0.85       809
-          2       1.00      0.99      1.00     41720
-          3       0.00      0.00      0.00         3
-          4       0.33      0.00      0.00      1100
+             0       0.84      1.00      0.91      6368
+             1       0.97      0.93      0.95       809
+             2       1.00      1.00      1.00     41720
+             3       0.00      0.00      0.00         3
+             4       0.00      0.00      0.00      1100
 
-avg / total       0.96      0.97      0.96     50000
-```
+   avg / total       0.96      0.97      0.96     50000
+   ```
 
 训练完成的决策树导出到`CART/output/tree-vis.pdf`供可视化
 
@@ -82,29 +82,29 @@ cd MLP
 python MLP_Runner.py
 ```
 
-Output:
+**Output**:
 
-confusion matrix:
-```
-[[ 6320    41     6     0     1]
- [    5   801     3     0     0]
- [  212     0 41508     0     0]
- [    2     1     0     0     0]
- [ 1095     1     2     0     2]]
-```
+1. Confusion matrix:
 
-Performance report:
-```
-             precision    recall  f1-score   support
+   ```
+   [[ 6320    41     6     0     1]
+    [    5   801     3     0     0]
+    [  212     0 41508     0     0]
+    [    2     1     0     0     0]
+    [ 1095     1     2     0     2]]
+   ```
+2. Performance report:
+   ```
+                precision    recall  f1-score   support
 
-          0       0.83      0.99      0.90      6368
-          1       0.95      0.99      0.97       809
-          2       1.00      0.99      1.00     41720
-          3       0.00      0.00      0.00         3
-          4       0.67      0.00      0.00      1100
+             0       0.83      0.99      0.90      6368
+             1       0.95      0.99      0.97       809
+             2       1.00      0.99      1.00     41720
+             3       0.00      0.00      0.00         3
+             4       0.67      0.00      0.00      1100
 
-avg / total       0.97      0.97      0.96     50000
-```
+   avg / total       0.97      0.97      0.96     50000
+   ```
 
 MLP模型被持久化在 `MLP/output/MLP.pkl`文件下，方便以后做离线预测
 
