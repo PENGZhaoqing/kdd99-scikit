@@ -25,8 +25,13 @@ Snapshoot of training data(`raw/kddcup.data_10_percent.txt`):
 
 ## Usage
 
+Fork first and then execute `Preprocessing.py` file to do:
+
+1. 将raw目录下的训练集和测试集的target类别用数字标识，生成新的文件储存在data目录下
+2. 将data目录下的训练机和测试集导入MongoDB数据库，方便后面快速读取
+
 ```
-git clone https://github.com/PENGZhaoqing/kdd99-scikit
+git clone https://github.com/your-github-account/kdd99-scikit
 cd kdd99-scikit
 python Preprocessing.py
 ```
@@ -40,16 +45,35 @@ python CART_Runner.py
 
 Output:
 
-confusion matrix:
+Confusion matrix:
 
+```
+[[ 6335     7    24     0     2]
+ [  184   606    19     0     0]
+ [  233     1 41486     0     0]
+ [    3     0     0     0     0]
+ [ 1098     0     1     0     1]]
+```
 
 Performance report:
 
+```
+             precision    recall  f1-score   support
 
-Besides, you can visualize the trained tree in `CART/output/tree-vis.pdf`
+          0       0.81      0.99      0.89      6368
+          1       0.99      0.75      0.85       809
+          2       1.00      0.99      1.00     41720
+          3       0.00      0.00      0.00         3
+          4       0.33      0.00      0.00      1100
+
+avg / total       0.96      0.97      0.96     50000
+```
+
+训练完成的决策树导出到`CART/output/tree-vis.pdf`供可视化
 
 
-And the trained model is persisted in `CART/output/CART.pkl`, you can perform off-line perdiction 
+
+决策树模型被持久化在 `CART/output/CART.pkl`文件下，方便以后做离线预测
 
 ### For MLP
 
@@ -82,7 +106,7 @@ Performance report:
 avg / total       0.97      0.97      0.96     50000
 ```
 
-And the trained model is persisted in `MLP/output/MLP.pkl`, you can perform off-line perdiction 
+MLP模型被持久化在 `MLP/output/MLP.pkl`文件下，方便以后做离线预测
 
 ## Structure
 
