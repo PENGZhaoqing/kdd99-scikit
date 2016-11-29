@@ -3,9 +3,9 @@ Solutions to kdd99 dataset with Decision Tree (CART) and Multilayer Perceptron b
 
 ## Intro to Kdd99 Dataset
 
-The competition task was to build a network intrusion detector, a predictive model capable of distinguishing between "bad" connections, called intrusions or attacks, and "good" normal connections. It is important to note that the test data is not from the same probability distribution as the training data, and it includes specific attack types not in the training data. 
+The [competition task](https://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html) was to build a network intrusion detector, a predictive model capable of distinguishing between "bad" connections, called intrusions or attacks, and "good" normal connections. Note that the test data is not from the same probability distribution as the training data, and it includes specific attack types not in the training data. 
 
-Snapshoot of training data:
+Snapshoot of training data(`raw/kddcup.data_10_percent.txt`):
 ```
 0,tcp,http,SF,181,5450,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,8,8,0.00,0.00,0.00,0.00,1.00,0.00,0.00,9,9,1.00,0.00,0.11,0.00,0.00,0.00,0.00,0.00,normal.
 0,tcp,http,SF,239,486,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,8,8,0.00,0.00,0.00,0.00,1.00,0.00,0.00,19,19,1.00,0.00,0.05,0.00,0.00,0.00,0.00,0.00,normal.
