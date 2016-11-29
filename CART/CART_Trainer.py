@@ -16,7 +16,7 @@ class Trainer:
 
     def train(self, training_set, training_target, fea_index):
 
-        clf = tree.DecisionTreeClassifier(criterion="gini", max_depth=7, min_samples_leaf=5)
+        clf = tree.DecisionTreeClassifier(criterion="gini", max_depth=7, min_samples_leaf=50)
         clf = clf.fit(training_set, training_target)
 
         class_names = np.unique([str(i) for i in training_target])

@@ -66,10 +66,10 @@ class Trainer:
         pca = PCA(n_components=20)
         pca.fit(data_set)
 
-        print data_set.shape
-
         data_set = pca.transform(data_set)
         test_set = pca.transform(test_set)
+
+        print data_set.shape
 
         scaler = StandardScaler()
         scaler.fit(data_set)
