@@ -39,6 +39,19 @@ python Preprocessing.py
 ### For Decision Tree
 
 ```
+.
+├── CART_Predictor.py
+├── CART_Runner.py
+├── CART_Trainer.py
+├── __init__.py
+└── output
+    ├── CART.pkl
+    └── tree-vis.pdf
+```
+
+决策树代码位于[CART](https://github.com/PENGZhaoqing/kdd99-scikit/tree/master/CART)目录下，CART_Trainer类封装了训练模型时调用的方法，CART_Predictor类封装了predict方法用于测试和输出，两者由CART_Runner调用
+
+```
 cd CART
 python CART_Runner.py
 ```
