@@ -3,6 +3,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 import collections
 
+
 class Predictor:
     def predict(self, data_set, data_target, mode):
         clf = joblib.load('output/CART.pkl')
@@ -18,6 +19,12 @@ class Predictor:
         print "\n"
         print classification_report(data_target, trained_target)
         print "\n"
+
+        return trained_target
+
+
+
+
 
         # for row in range(0, 4):
         #     if sum(matrix[row, :][0:-1]) > 0:

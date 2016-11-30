@@ -86,7 +86,7 @@ class Trainer:
 
         :param data_set:
         :param data_target:
-        :return: data_set, data_target
+        :return: data_set
         """
 
         le_1 = preprocessing.LabelEncoder()

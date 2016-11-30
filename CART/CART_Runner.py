@@ -2,6 +2,7 @@ from Mongo_Con import DB_manager
 from CART_Trainer import Trainer
 from CART_Predictor import Predictor
 from Variable import attr_list
+from io import open
 
 
 class Runner:
@@ -20,11 +21,16 @@ class Runner:
         self.predictor.predict(test_set, test_target, mode="validation")
         return dataset, datatarget, fea_index
 
-    def predict(self, data_set, data_target, fea_index, T_len):
-        test_data_set = data_set[T_len:len(dataset)]
-        test_data_target = data_target[T_len:len(dataset)]
+    def predict(self, dataset, datatarget, fea_index, T_len):
+        test_data_set = dataset[T_len:len(dataset)]
+        test_data_target = datatarget[T_len:len(dataset)]
         feature_set = test_data_set[:, fea_index]
-        self.predictor.predict(feature_set, test_data_target, mode="test")
+        trained_target = self.predictor.predict(feature_set, test_data_target, mode="test")
+        with open("output/trained_text.txt", "wb") as text_file:
+            reverse_catagory = {0: "normal", 1: "probe", 2: "dos", 3: "u2r", 4: "r2l"}
+            for i in range(len(test_data_set)):
+                str = ','.join(test_data_set[i])
+                text_file.write("%s,%s\n" % (str, reverse_catagory[trained_target[i]]))
 
 
 runner = Runner()
