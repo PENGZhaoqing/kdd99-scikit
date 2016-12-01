@@ -144,3 +144,5 @@ with open("data/corrected.txt") as f:
                 element = float(element)
             dic[attr] = element
         db.test_data.insert_one({"test_set": dic})
+
+

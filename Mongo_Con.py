@@ -44,11 +44,11 @@ class DB_manager:
                 self.db.test_data.insert_one({"test_set": dic})
 
     def CART_fetch_data(self):
-        training_cursor = self.db.training_data.find({"training_set.src_bytes": {"$gt": 1000}})
-        test_cursor = self.db.test_data.find({"test_set.src_bytes": {"$gt": 1000}})
+        # training_cursor = self.db.training_data.find({"training_set.src_bytes": {"$gt": 1000}})
+        # test_cursor = self.db.test_data.find({"test_set.src_bytes": {"$gt": 1000}})
 
-        # training_cursor = self.db.training_data.find()
-        # test_cursor = self.db.test_data.find()
+        training_cursor = self.db.training_data.find()
+        test_cursor = self.db.test_data.find()
 
         cursor = training_cursor.sort('training_set.type', pymongo.ASCENDING)
 
