@@ -1,4 +1,5 @@
 # kdd99-scikit
+
 Solutions to kdd99 dataset with Decision Tree (CART) and Multilayer Perceptron by scikit-learn
 
 ## Intro to Kdd99 Dataset
@@ -24,6 +25,8 @@ Snapshoot of training data(`raw/kddcup.data_10_percent.txt`):
 * Mongodb
 
 ## Usage
+
+### [详细说明](http://blog.csdn.net/ppp8300885/article/details/53406511)
 
 Fork first and then execute `Preprocessing.py` file to do:
 
