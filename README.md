@@ -43,13 +43,14 @@ python Preprocessing.py
 ├── CART_Predictor.py
 ├── CART_Runner.py
 ├── CART_Trainer.py
+├── CART_all.py
 ├── __init__.py
 └── output
     ├── CART.pkl
     └── tree-vis.pdf
 ```
 
-决策树代码位于[CART](https://github.com/PENGZhaoqing/kdd99-scikit/tree/master/CART)目录下，CART_Trainer类封装了训练模型时调用的方法，CART_Predictor类封装了predict方法用于测试和输出，两者由CART_Runner调用
+决策树代码位于[CART](https://github.com/PENGZhaoqing/kdd99-scikit/tree/master/CART)目录下，CART_Trainer类封装了训练模型时调用的方法，CART_Predictor类封装了predict方法用于测试和输出，两者由CART_Runner调用，CART_all.py除去了各种类和调用方式，将代码整合在一起
 
 ```
 cd CART
@@ -61,11 +62,11 @@ python CART_Runner.py
 1. Confusion matrix:
 
    ```
-    [ 6361     6     1     0     0]
-    [   28   751    30     0     0]
-    [   96    19 41605     0     0]
-    [    3     0     0     0     0]
-    [ 1097     2     1     0     0]]
+   [[ 6294    38    15    10    11]
+   [    5   800     4     0     0]
+   [  191    20 41508     1     0]
+   [    0     0     0     3     0]
+   [ 1076     5     0    16     3]]
    ```
 
 2. Performance report:
@@ -73,13 +74,13 @@ python CART_Runner.py
    ```
                 precision    recall  f1-score   support
 
-             0       0.84      1.00      0.91      6368
-             1       0.97      0.93      0.95       809
-             2       1.00      1.00      1.00     41720
-             3       0.00      0.00      0.00         3
-             4       0.00      0.00      0.00      1100
+            0       0.83      0.99      0.90      6368
+            1       0.93      0.99      0.96       809
+            2       1.00      0.99      1.00     41720
+            3       0.10      1.00      0.18         3
+            4       0.21      0.00      0.01      1100
 
-   avg / total       0.96      0.97      0.96     50000
+  avg / total       0.96      0.97      0.96     50000
    ```
 
 * 训练完成的决策树导出到`CART/output/tree-vis.pdf`供可视化，如图：
@@ -89,6 +90,19 @@ python CART_Runner.py
 * 决策树模型被持久化在 `CART/output/CART.pkl`文件下，方便以后做离线预测
 
 ### For MLP
+
+```
+.
+├── MLP_Predictor.py
+├── MLP_Predictor.pyc
+├── MLP_Runner.py
+├── MLP_Trainer.py
+├── MLP_Trainer.pyc
+├── __init__.py
+└── output
+    ├── MLP.pkl
+    └── decision-tree.pkl
+```
 
 ```
 cd MLP
@@ -131,9 +145,11 @@ python MLP_Runner.py
 │   ├── CART_Runner.py
 │   ├── CART_Trainer.py
 │   ├── CART_Trainer.pyc
+│   ├── CART_all.py
 │   ├── __init__.py
 │   └── output
 │       ├── CART.pkl
+│       ├── trained_text.txt
 │       └── tree-vis.pdf
 ├── MLP
 │   ├── MLP_Predictor.py
@@ -149,6 +165,9 @@ python MLP_Runner.py
 ├── Mongo_Con.pyc
 ├── Preprocessing.py
 ├── Preprocessing.pyc
+├── Preprocessing_all.py
+├── README.md
+├── Snip20161130_3.png
 ├── Variable.py
 ├── Variable.pyc
 ├── __init__.py
@@ -161,5 +180,5 @@ python MLP_Runner.py
     ├── kddcup.data_10_percent.txt
     ├── testdata_unlabeled_50000.txt
     └── training_attack_types.txt
-    
+
 ```
